@@ -1,5 +1,12 @@
 language: python
+sudo: False
 python:
-- '2.7'
-- '3.3'
-- pypy
+  - 2.7
+  - 3.3
+  - 3.4
+  - 3.5
+
+script:
+  - python ./setup.py test
+
+cache: pip

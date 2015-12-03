@@ -2,8 +2,10 @@
 
 import re
 from setuptools import setup
+import os
 
-VERSIONFILE="orchetrate-sql/version.py"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+VERSIONFILE = "{}/orchestrate-sql/version.py".format(BASE_DIR)
 verstrline = open(VERSIONFILE, "rt").read()
 VSRE = r"^VERSION = ['\"]([^'\"]*)['\"]"
 mo = re.search(VSRE, verstrline, re.M)
@@ -18,12 +20,12 @@ setup(name='orchetrate-sql',
       author='Diana Thayer',
       author_email='diana@orchestrate.io',
       url='https://github.com/orchestrate-io/orchetrate-sql',
-      packages=['orchetrate-sql'],
+      packages=['orchestrate-sql'],
       license='Apache-2.0',
       install_requires=[
-          'porc==0.3.1',
-          'psycopg2==2.5.4',
-          'vcrpy==1.1.0'
+          'porc',
+          'psycopg2',
+          'vcrpy'
       ],
       test_suite="tests",
       classifiers=[
